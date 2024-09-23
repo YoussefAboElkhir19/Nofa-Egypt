@@ -1,11 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 1000, // Increase limit to 1000 kB
+    chunkSizeWarningLimit: 1000,
   },
-  base: "/nofa-egypt/",
+  base: "/nofa-egypt/", // Your repo name here
+  server: {
+    historyApiFallback: true, // Important for React Router to work
+  },
 });
